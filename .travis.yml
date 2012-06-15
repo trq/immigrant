@@ -1,0 +1,12 @@
+language: php
+
+php:
+  - 5.3
+
+before_script: curl -s http://getcomposer.org/installer | php -- && php composer.phar install --dev && echo '<?php return array("dsn" => "mysql:host=127.0.0.1", "user" => "root", "pass" => null); ?>' > config.php
+script: ./vendor/bin/phake
+
+branches:
+  only:
+    - master
+    - develop

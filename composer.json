@@ -1,0 +1,19 @@
+{
+  "name": "trq/immigrant",
+  "description": "Database migrations for PHP5.3",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Tony R Quilkey",
+      "email": "trq@proemframework.org",
+      "homepage": "http://thorpesystems.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.3.0"
+  },
+  "require-dev": {
+    "jaz303/phake": "dev-master"
+  }
+}
