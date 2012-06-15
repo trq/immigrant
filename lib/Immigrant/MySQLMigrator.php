@@ -45,9 +45,6 @@ class MySQLMigrator implements MigratorInterface
 
     public function createDatabase($database, array $options = array()) {
         if ($this->databaseExists($database)) {
-            if ($this->inTransaction()) {
-                $this->rollback();
-            }
             throw new \RuntimeException(sprintf("The database %s already exists, unable to create.", $database));
         }
 
@@ -67,9 +64,6 @@ class MySQLMigrator implements MigratorInterface
 
     public function dropDatabase($database) {
         if (!$this->databaseExists($database)) {
-            if ($this->inTransaction()) {
-                $this->rollback();
-            }
             throw new \RuntimeException(sprintf("The database %s does not exist, unable to drop.", $database));
         }
 
